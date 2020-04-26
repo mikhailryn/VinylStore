@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    @*<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">*@
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+   
+    <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
+
+
+    @*<link href="~/Content/site.css" rel="stylesheet" />*@
+
+</head>
+<body>
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Vinyl Store</a>
+            </div>
+            <ul class="nav navbar-nav">
+
+
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+
+                @await Component.InvokeAsync("CategoryMenu")
+      
+                @await Component.InvokeAsync("ShoppingCartSummary")
+
+                <partial name="_LoginPartial" />
+
+                <li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Admin" asp-action="Index">Store manage</a>
+                    }
+                </li>
+
+            </ul>
+
+
+        </div>
+    </nav>
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">
+                <img class="img-responsive" alt="Vinyl Shop'" src="~/Images/MainLogo.jpg" />
+            </p>
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+    
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

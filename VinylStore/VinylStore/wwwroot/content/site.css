@@ -1,0 +1,40 @@
+﻿/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+
+
+.slide-image {
+    width: 100%;
+    position: absolute;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+    
+}
+
+
+
+.img-responsive {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    transform: translateX(50px)
+}
+
+
+.carousel .item {
+    height: 400px;
+    
+    
+}
+
+

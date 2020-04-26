@@ -1,0 +1,8 @@
+﻿@model VinylViewModel
+
+
+<h1> @Model.CurrentCategory</h1>
+@foreach (var vinyl in Model.Vinyls)
+{
+   <partial name="_VinylCard" model="vinyl" />
+}

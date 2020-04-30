@@ -9,6 +9,7 @@
             <th>Vinyl</th>
             <th class="text-right">Price</th>
             <th class="text-right">Subtotal</th>
+            <th class="text-right">Remove item</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,19 @@
                 <td class="text-right">
                     @((line.Amount * line.Vinyl.Price).ToString("c"))
                 </td>
+                <td>
+                    <form asp-action="RemoveFromShoppingCart" method="post">
+                        <input type="hidden" name="VinylId"
+                               value="@line.Vinyl.VinylId" />
+                       <button type="submit" class="btn btn-sm btn-danger">
+                           Remove
+                       </button>
+
+
+                    </form>
+
+                </td>
+
             </tr>
         }
     </tbody>
@@ -34,6 +48,8 @@
     </tfoot>
 </table>
 
-<div class="text-center">
+@*<div class="text-center">*@
     <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout">Check out now!</a>
-</div>
+<a class="btn btn-primary" asp-controller="Vinyl" asp-action="List">Continue shopping</a>
+ 
+

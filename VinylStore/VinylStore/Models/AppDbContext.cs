@@ -26,9 +26,11 @@ namespace VinylStore.Models
 
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Rock vinyl" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "R&B vinyl" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Pop vinyl" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Rock/Pop" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Soul/R&B" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Jazz" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 4, CategoryName = "Electronic" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 5, CategoryName = "Classical" });
 
             modelBuilder.Entity<Vinyl>().HasData(new Vinyl
             {

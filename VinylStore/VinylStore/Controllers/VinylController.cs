@@ -22,14 +22,27 @@ namespace VinylStore.Controllers
             this.categoryRepository = categoryRepository;
         }
 
-        public ViewResult List()
+        public ViewResult List(string category)
         {
-            VinylViewModel vinylViewModel = new VinylViewModel();
+            IEnumerable<Vinyl> vinyls;
+            string currentCategory;
 
-            vinylViewModel.Vinyls = vinylRepository.AllVinyls;
-
-            vinylViewModel.CurrentCategory = "MihRyVinyls";
-            return View(vinylViewModel);
+            if (string.IsNullOrEmpty(category))
+            {
+                vinyls = vinylRepository.AllVinyls.OrderBy(v => v.VinylId);
+                currentCategory = "All vinyl record";
+            }
+            else
+            {
+                vinyls = vinylRepository.AllVinyls.Where(v => v.Category.CategoryName == category)
+                    .OrderBy(v => v.VinylId);
+                currentCategory = categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+            }
+            return View(new VinylViewModel{
+                Vinyls = vinyls,
+                CurrentCategory = currentCategory
+            });
+            
         }
 
         public IActionResult Details(int id)

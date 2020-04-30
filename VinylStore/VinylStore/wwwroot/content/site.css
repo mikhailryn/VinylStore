@@ -4,9 +4,16 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+body {
+    padding-top: 56px;
+}
 
+/*body {
+ overflow-x: hidden;
+     
+}*/
 
-.slide-image {
+/*.slide-image {
     width: 100%;
     position: absolute;
 }
@@ -19,22 +26,24 @@
 .item {
     border-radius: 4px;
     
-}
+}*/
 
 
 
 .img-responsive {
+   
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     height: auto;
-    transform: translateX(50px)
+    transform: translate(50px,20px);
 }
 
 
-.carousel .item {
+/*.carousel .item {
     height: 400px;
-    
-    
+    width:auto
 }
 
-
+.thumbnail {
+    display: none;
+}*/

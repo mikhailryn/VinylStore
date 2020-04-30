@@ -1,0 +1,58 @@
+body {
+    padding-top: 56px;
+    background-color: lightblue
+}
+.img-responsive {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    transform: translate(1px,20px);
+}
+
+
+
+
+
+
+.social-icons li {
+    display: inline-block;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+
+.social-icons a {
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 48px;
+    word-break: break-all;
+}
+
+.social-icons span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    background-image: url(social-icons.png);
+}
+
+.social-icons li:nth-child(2) span {
+    background-position: -48px 0;
+}
+
+.social-icons li:nth-child(3) span {
+    background-position: -96px 0;
+}
+
+.social-icons li:nth-child(4) span {
+    background-position: 0 -48px;
+}
+
+.social-icons li:nth-child(5) span {
+    background-position: -48px -48px;
+}
+
+.social-icons li:nth-child(6) span {
+    background-position: -96px -48px;
+}

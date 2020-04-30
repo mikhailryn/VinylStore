@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200420195551_Initial.cs" />
+    <Compile Remove="Migrations\20200420195551_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20200421173713_IdentityAdded.cs" />
+    <Compile Remove="Migrations\20200421173713_IdentityAdded.Designer.cs" />
     <Compile Remove="Migrations\20200424165557_AddUser.cs" />
     <Compile Remove="Migrations\20200424165557_AddUser.Designer.cs" />
     <Compile Remove="Migrations\20200424171519_AddUser.cs" />

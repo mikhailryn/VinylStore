@@ -4,65 +4,130 @@
 <head>
 
     <meta name="viewport" content="width=device-width" />
+
     <title>@ViewBag.Title</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    @*<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">*@
-    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 
-   
-    <script src="~/lib/jquery/jquery.js"></script>
-        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    
 
+    <link href="~/content/style.css" rel="stylesheet" type="text/css" />
 
+    <link href="~/content/shop-homepage.css" rel="stylesheet" />
 
-    @*<link href="~/Content/site.css" rel="stylesheet" />*@
+    <link href="~/content/bootstrap.min.css" rel="stylesheet" />
+
 
 </head>
 <body>
 
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Vinyl Store</a>
-            </div>
-            <ul class="nav navbar-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Vinyl Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
 
 
-                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    @await Component.InvokeAsync("CategoryMenu")
 
-                @await Component.InvokeAsync("CategoryMenu")
-      
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Contact" asp-action="Index">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="nav-link" asp-controller="Admin" asp-action="Index">Admin panel</a>
+                        }
+
+                </ul>
+                <partial name="_LoginPartial" />
                 @await Component.InvokeAsync("ShoppingCartSummary")
 
-                <partial name="_LoginPartial" />
-
-                <li>
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <a asp-controller="Admin" asp-action="Index">Store manage</a>
-                    }
-                </li>
-
-            </ul>
+            </div>
 
 
         </div>
     </nav>
 
 
-    <div class="row">
-        <div class="col-md-3">
-            <p class="lead">
-                <img class="img-responsive" alt="Vinyl Shop'" src="~/Images/MainLogo.jpg" />
-            </p>
-        </div>
-        <div class="col-md-9">
-            @RenderBody()
+
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <p class="lead">
+                    <img class="img-responsive" alt="Vinyl Shop'" src="~/Images/MainLogo.jpg" />
+                </p>
+                <br />
+
+
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Category 1</a>
+                    <a href="#" class="list-group-item">Category 2</a>
+                    <a href="#" class="list-group-item">Category 3</a>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+
+                @RenderBody()
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
-    
+
+
+
+    @*<footer class="py-1 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+        <img src="~/content/2020_02_20_17_08_17_794_hhv_c3645e98d6a780eb5f9289539716bdeb.png"/>
+        <ul class="social-icons">
+            <li><a href="https://www.instagram.com/livingindiatv/">instagram<span></span></a></li>
+            <li><a href="https://www.facebook.com/livingindiatv/">facebook<span></span></a></li>
+            <li><a href="https://plus.google.com/102689304172526656580">gplus<span></span></a></li>
+            <li><a href="https://in.pinterest.com/livingindiatv/">pinterest<span></span></a></li>
+        <li><a href="https://youtube.com">youtube<span></span></a></li>
+        <li><a href="https://plus.google.com/102689304172526656580">gplus<span></span></a></li>
+        <li><a href="https://twitter.com/livingindiatv">twitter<span></span></a></li>
+        <li><a href="https://www.facebook.com/livingindiatv/">facebook<span></span></a></li>
+        </ul>
+
+    </footer>*@
+
+
     @RenderSection("Scripts", required: false)
+
+
+
+    <script src="~/content/jquery.min.js"></script>
+    <script src="~/content/bootstrap.bundle.min.js"></script>
 </body>
 </html>

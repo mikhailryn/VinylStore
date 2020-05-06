@@ -9,11 +9,15 @@
             <div class="caption">
                 <h3 class="pull-right">@Model.Price.ToString("c")</h3>
                 <h3>
-                    <a asp-controller="Vinyl" asp-action="Details" asp-route-id="@Model.VinylId">@Model.Name</a>
+                    <a asp-controller="Vinyl" asp-action="Details" asp-route-id="@Model.VinylId">@Model.Album.Artist.ArtistName</a>
                 </h3>
                 <p>@Model.ShortDescription</p>
             </div>
 
+            @*<div>
+                @Model.Album.Artist.ArtistName
+
+            </div>*@
 
             <div class="addToCart">
                 <p class="button">

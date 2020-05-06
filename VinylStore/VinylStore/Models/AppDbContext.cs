@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace VinylStore.Models
 {
-    public class AppDbContext:IdentityDbContext<IdentityUser> //IdentityUser
+    public class AppDbContext:IdentityDbContext<IdentityUser> 
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
@@ -20,41 +20,58 @@ namespace VinylStore.Models
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Artist> Artists { get; set; }
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Rock/Pop" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Soul/R&B" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Jazz" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 4, CategoryName = "Electronic" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 5, CategoryName = "Classical" });
+            modelBuilder.Entity<Genre>().HasData(new Genre { GenreId = 1, GenreName = "Rock/Pop" });
+            modelBuilder.Entity<Genre>().HasData(new Genre { GenreId = 2, GenreName = "Soul/R&B" });
+            modelBuilder.Entity<Genre>().HasData(new Genre { GenreId = 3, GenreName = "Jazz" });
+            modelBuilder.Entity<Genre>().HasData(new Genre { GenreId = 4, GenreName = "Electronic" });
+            modelBuilder.Entity<Genre>().HasData(new Genre { GenreId = 5, GenreName = "Classic" });
+
+
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "New arrivals" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Timeless classic" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Exclusives" });
+
+
+            modelBuilder.Entity<Artist>().HasData(new Artist { ArtistId = 1, ArtistName = "Pink Floyd", ImgUrl = "https://life.bodo.ua/upload/files/cm-event/17/16666/image/971226c05f8108a4375440fad6ebd5d788edcf12-r1r1h1000w1422zc3q100.jpg" });
+            modelBuilder.Entity<Artist>().HasData(new Artist { ArtistId = 2, ArtistName = "Madonna", ImgUrl= "https://imgclf.112.ua/original/2019/05/15/388283.jpg?timestamp=1557857653" });
+            modelBuilder.Entity<Artist>().HasData(new Artist { ArtistId = 3, ArtistName = "Stevie Wonder", ImgUrl= "https://tunnel.ru/media/images/2019-05/post/128729/stevie-wonder-1.jpg" });
+
+
+            modelBuilder.Entity<Album>().HasData(new Album { AlbumId = 1, AlbumName = "The Dark Side of the Moon", ArtistId = 1,  GenreId=1});
+            modelBuilder.Entity<Album>().HasData(new Album { AlbumId = 2, AlbumName = "Like a Prayer", ArtistId = 2, GenreId = 1 });
+            modelBuilder.Entity<Album>().HasData(new Album { AlbumId = 3, AlbumName = "Songs in the Key of Life", ArtistId = 3, GenreId = 2 });
 
             modelBuilder.Entity<Vinyl>().HasData(new Vinyl
             {
                 VinylId = 1,
-                Name = "Pink Floyd",
+                AlbumId = 1,
                 Label = "Virgin Records",
                 Price = 23.56M,
                 ShortDescription = "Best album",
-                CategoryId = 1,
+                CategoryId = 2,
                 ImageUrl = "https://idealsounds.net/images/covers/pink-floyd-the-dark-side-of-the-moon-lp-180-gram-vinyl.jpg",
                 InStock = true,
                 IsVinylOfTheWeek = true,
                 ImageThumbnailUrl = "https://images-na.ssl-images-amazon.com/images/I/31+szRBlJyL._AC_US218_.jpg"
-
             });
 
             modelBuilder.Entity<Vinyl>().HasData(new Vinyl
             {
                 VinylId = 2,
-                Name = "Madonna",
+                AlbumId = 2,
                 Label = "EMO Records",
                 Price = 13.46M,
                 ShortDescription = "Best album",
-                CategoryId = 3,
+                CategoryId = 1,
                 ImageUrl = "https://cdn.shopify.com/s/files/1/0593/0549/products/MADONNASELG_800x667_9eadab26-9683-442a-8560-700bfd08c39b.jpg?v=1466277186",
                 InStock = true,
                 IsVinylOfTheWeek = false,
@@ -65,11 +82,11 @@ namespace VinylStore.Models
             modelBuilder.Entity<Vinyl>().HasData(new Vinyl
             {
                 VinylId = 3,
-                Name = "Madonna",
-                Label = "EMO Records",
+                AlbumId = 3,
+                Label = "Vertigo Records",
                 Price = 13.46M,
                 ShortDescription = "Best album",
-                CategoryId = 2,
+                CategoryId = 3,
                 ImageUrl = "https://cdn.shopify.com/s/files/1/0068/0042/products/MOT5316422.1_800x.jpg?v=1571439086",
                 InStock = true,
                 IsVinylOfTheWeek = false,

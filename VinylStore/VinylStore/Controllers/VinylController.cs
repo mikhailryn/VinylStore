@@ -48,6 +48,7 @@ namespace VinylStore.Controllers
         public IActionResult Details(int id)
         {
             var vinyl = vinylRepository.GetVinylById(id);
+
             if (vinyl == null)
             {
                 return NotFound();

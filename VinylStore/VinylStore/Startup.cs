@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using VinylStore.Models;
+using VinylStore.Models.Interface;
+using VinylStore.Models.Repository;
 
 namespace VinylStore
 {
@@ -38,6 +40,7 @@ namespace VinylStore
             services.AddScoped<IVinylRepository, VinylRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IArtistRepository, ArtistRepository>();
 
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
             services.AddHttpContextAccessor();

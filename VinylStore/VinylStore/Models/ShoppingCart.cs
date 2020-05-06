@@ -92,7 +92,7 @@ namespace VinylStore.Models
             return ShoppingCartItems ??
                    (ShoppingCartItems =
                        appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
-                           .Include(s => s.Vinyl)
+                           .Include(s => s.Vinyl.Album.Artist) // -- 
                            .ToList());
         }
 

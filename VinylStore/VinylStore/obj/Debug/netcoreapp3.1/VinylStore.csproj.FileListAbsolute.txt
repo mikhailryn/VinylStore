@@ -178,4 +178,6 @@ C:\Users\Mikhail\source\repos\VinylStore\VinylStore\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Mikhail\source\repos\VinylStore\VinylStore\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Edit.cshtml.g.cs
 C:\Users\Mikhail\source\repos\VinylStore\VinylStore\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Index.cshtml.g.cs
 C:\Users\Mikhail\source\repos\VinylStore\VinylStore\obj\Debug\netcoreapp3.1\Razor\Views\Roles\UserList.cshtml.g.cs
+C:\Users\Mikhail\source\repos\VinylStore\VinylStore\obj\Debug\netcoreapp3.1\Razor\Views\Artist\Index.cshtml.g.cs
+C:\Users\Mikhail\source\repos\VinylStore\VinylStore\obj\Debug\netcoreapp3.1\Razor\Views\Artist\Details.cshtml.g.cs
 C:\Users\Mikhail\source\repos\VinylStore\VinylStore\obj\Debug\netcoreapp3.1\VinylStore.csprojAssemblyReference.cache

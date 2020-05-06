@@ -28,7 +28,7 @@ namespace VinylStore.Controllers
             if (ModelState.IsValid)
             {
                 vinylRepository.SaveVinyl(vinyl);
-                TempData["message"] = $"{vinyl.Name} has been saved";
+                TempData["message"] = $"{vinyl.Album.AlbumName} has been saved";
                 return RedirectToAction("Index");
             }
             else

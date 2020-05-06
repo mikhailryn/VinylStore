@@ -19,7 +19,7 @@ namespace VinylStore.Models
         {
             get
             {
-                return appDbContext.Vinyls.Include(c => c.Category); 
+                return appDbContext.Vinyls.Include(c => c.Album.Artist).Include(c => c.Category); // --
             }
         }
 
@@ -27,7 +27,7 @@ namespace VinylStore.Models
         {
             get
             {
-                return appDbContext.Vinyls.Include(c => c.Category).Where(p=>p.IsVinylOfTheWeek);
+                return appDbContext.Vinyls.Include(c => c.Album.Artist).Include(c => c.Category).Where(p=>p.IsVinylOfTheWeek); // -- Album.Genre
             }
         }
 
@@ -45,7 +45,7 @@ namespace VinylStore.Models
 
         public Vinyl GetVinylById(int vinylId)
         {
-            return appDbContext.Vinyls.FirstOrDefault(p => p.VinylId == vinylId);
+            return appDbContext.Vinyls.Include(c =>c.Album.Artist).FirstOrDefault(p => p.VinylId == vinylId); //-ditch
         }
 
         public void SaveVinyl(Vinyl vinyl)
@@ -59,7 +59,8 @@ namespace VinylStore.Models
                 Vinyl dbEntry = appDbContext.Vinyls.FirstOrDefault(v => v.VinylId == vinyl.VinylId);
                 if(dbEntry != null)
                 {
-                    dbEntry.Name = vinyl.Name;
+                    
+                   
                     dbEntry.ShortDescription = vinyl.ShortDescription;
                     dbEntry.LongDescription = vinyl.LongDescription;
                     dbEntry.Label = vinyl.Label;

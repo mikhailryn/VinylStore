@@ -13,6 +13,20 @@
     <Compile Remove="Migrations\20200424165557_AddUser.Designer.cs" />
     <Compile Remove="Migrations\20200424171519_AddUser.cs" />
     <Compile Remove="Migrations\20200424171519_AddUser.Designer.cs" />
+    <Compile Remove="Migrations\20200429142532_InitialTwo.cs" />
+    <Compile Remove="Migrations\20200429142532_InitialTwo.Designer.cs" />
+    <Compile Remove="Migrations\20200502205756_TestInitial.cs" />
+    <Compile Remove="Migrations\20200502205756_TestInitial.Designer.cs" />
+    <Compile Remove="Migrations\20200503094534_AddArtist.cs" />
+    <Compile Remove="Migrations\20200503094534_AddArtist.Designer.cs" />
+    <Compile Remove="Migrations\20200503095009_AddArtist.cs" />
+    <Compile Remove="Migrations\20200503095009_AddArtist.Designer.cs" />
+    <Compile Remove="Migrations\20200503190022_AddArtist.cs" />
+    <Compile Remove="Migrations\20200503190022_AddArtist.Designer.cs" />
+    <Compile Remove="Migrations\20200503190952_SwapArtist.cs" />
+    <Compile Remove="Migrations\20200503190952_SwapArtist.Designer.cs" />
+    <Compile Remove="Migrations\20200504180027_AddArtName.cs" />
+    <Compile Remove="Migrations\20200504180027_AddArtName.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

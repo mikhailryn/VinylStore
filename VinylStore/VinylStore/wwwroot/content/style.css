@@ -11,8 +11,21 @@ body {
 
 
 
+.gallery2 {
+    overflow: hidden;
+    width: 180px;
+}
 
+.gallery2 .ramka {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
 
+.gallery2 img {
+        width: 150px;
+        height: 150px;
+    }
 
 .social-icons li {
     display: inline-block;

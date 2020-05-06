@@ -8,7 +8,6 @@ namespace VinylStore.Models
     public class Vinyl
     {
         public int VinylId { get; set; }
-        public string Name { get; set; }
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
         public string Label { get; set; }
@@ -19,6 +18,8 @@ namespace VinylStore.Models
         public bool InStock { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        
+        public int AlbumId { get; set; }
+        public Album Album { get; set; }
+
     }
 }

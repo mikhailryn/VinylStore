@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VinylStore.Models.Pages;
 
 namespace VinylStore.Models
 {
@@ -22,6 +23,13 @@ namespace VinylStore.Models
                 return appDbContext.Vinyls.Include(c => c.Album.Artist).Include(c => c.Category); // --
             }
         }
+
+        //--Pages
+        public PagedList<Vinyl> GetVinyls(QueryOptions options)
+        {
+            return new PagedList<Vinyl>(appDbContext.Vinyls.Include(v => v.Category), options);
+        } 
+        //---
 
         public IEnumerable<Vinyl> VinylsOfTheWeek
         {

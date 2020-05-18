@@ -8,6 +8,12 @@ namespace VinylStore.ViewModels
 {
     public class ArtistViewModel
     {
-       public IEnumerable<Artist> AllArtists { get; set; }
+       public Artist AllArtists { get; set; }
+
+
+
+        public IEnumerable<Album> AllAlbums { get; set; }
+
+
     }
 }

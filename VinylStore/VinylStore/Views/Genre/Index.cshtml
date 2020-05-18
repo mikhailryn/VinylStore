@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Genre>
+
+<br />
+<br />
+<br />
+
+   
+<div class="row">
+    <div class="col-lg-push-6">
+        @foreach (var genres in Model)
+        {
+
+
+            <a asp-controller="Genre" asp-action="Detail" asp-route-id="@genres.GenreId"> <img src="@genres.ImgUrl" /></a>
+
+        }
+    </div>
+</div>

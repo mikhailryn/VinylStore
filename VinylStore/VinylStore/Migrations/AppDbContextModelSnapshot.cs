@@ -335,17 +335,17 @@ namespace VinylStore.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CategoryName = "New Arrivals"
+                            CategoryName = "New arrivals"
                         },
                         new
                         {
                             CategoryId = 2,
-                            CategoryName = "Timeless Classic"
+                            CategoryName = "Timeless classic"
                         },
                         new
                         {
                             CategoryId = 3,
-                            CategoryName = "All records"
+                            CategoryName = "Exclusives"
                         });
                 });
 
@@ -360,6 +360,9 @@ namespace VinylStore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GenreName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImgUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("GenreId");

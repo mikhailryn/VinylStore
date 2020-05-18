@@ -1,23 +1,45 @@
-﻿@model Artist
+﻿@model ArtistViewModel
 
-
+<br />
 <div class="thumbnail">
-    <img alt="@Model.ArtistName" src="@Model.ImgUrl">
+    <img alt="@Model.AllArtists.ArtistName" src="@Model.AllArtists.ImgUrl">
     <div class="caption-full">
 
         <span class="border">
 
-            <h4>@Model.Description</h4>
+            <h4>@Model.AllArtists.Description</h4>
 
         </span>
 
 
         @* Перечень альбомов для у каждого артиста *@
 
-        <div class="row">
+
+    </div>
+</div>
+
+<div class="row">
+
+    @foreach (var album in Model.AllAlbums)
+    {
+    <div class="col-lg-4 col-md-6 mb-4">
+
+        <div class="thumbnail">
+
+            <div class="gallery2">
+
+                <div class="ramka"> <img src="@album.ImgUrl" /> </div>
+
+            </div>
+
+            <div class="caption">
+
+                <h3>
+                    <a > @album.AlbumName</a>
+                </h3>
 
 
-
+              
 
 
 
@@ -25,5 +47,13 @@
 
 
 
+
+   
+
+
+
+
         </div>
-    </div>
+            </div>
+     }
+        </div>

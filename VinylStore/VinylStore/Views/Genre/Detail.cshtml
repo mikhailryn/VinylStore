@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Album>
+
+<br />
+
+    <div class="row">
+
+        @foreach (var albums in Model)
+        {
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+
+                <div class="thumbnail">
+
+
+
+                  
+
+
+                    <div class="gallery2">
+
+                        <div class="ramka"> <img src="@albums.ImgUrl" /> </div>
+
+                    </div>
+
+
+                    <div class="caption">
+
+                        <h3>
+
+
+                            <a href="#"> @albums.AlbumName</a>
+
+
+                        </h3>
+                    </div>
+
+
+                </div>
+                </div>
+         }
+
+
+                </div>

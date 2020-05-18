@@ -6,23 +6,32 @@
 
 
 
-<div class="thumbnail">
-    <img alt="@Model.Album.Artist.ArtistName" src="@Model.ImageUrl">
-    <div class="caption-full">
-        <h3 class="pull-right">@Model.Price.ToString("c")</h3>
-        <h3>
-            <a href="#">@Model.Album.Artist.ArtistName</a>
-        </h3>
-        <h4>@Model.ShortDescription</h4>
-        <p>@Model.LongDescription</p>
+    <div class="thumbnail">
 
-        <div class="addToCart">
-            <p class="button">
-                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
-                   asp-route-vinylId="@Model.VinylId">Add to cart</a>
-            </p>
+        
+
+        <div class="gallery3">
+            <img  @*alt="@Model.Album.Artist.ArtistName"*@ src="@Model.ImageUrl"   height="345"/>
         </div>
+           
 
 
-    </div>
-</div>
+
+            <div class="caption-full">
+                <h3 class="pull-right">@Model.Price.ToString("c")</h3>
+                <h3>
+                    <a href="#">@Model.Album.Artist.ArtistName</a>
+                </h3>
+                @*<h4>@Model.ShortDescription</h4>*@
+                <p>@Model.LongDescription</p>
+
+                <div class="addToCart">
+                    <p class="button">
+                        <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                           asp-route-vinylId="@Model.VinylId">Add to cart</a>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>

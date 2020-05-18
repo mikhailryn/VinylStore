@@ -7,6 +7,8 @@ namespace VinylStore.Models.Interface
 {
     public interface IAlbumRepository
     {
-        IEnumerable<Category> AllCategories { get; }
+        IEnumerable<Album> AllAlbums { get; }
+
+        Album GetAlbumById(int albumId);
     }
 }

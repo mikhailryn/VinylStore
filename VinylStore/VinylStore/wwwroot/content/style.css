@@ -27,6 +27,29 @@ body {
         height: 150px;
     }
 
+
+/*.gallery3 {
+    overflow: hidden;
+    width: 180px;
+}
+
+    .gallery3 .ramka2 {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }*/
+
+.gallery3 img
+{
+   width: 50%;
+   height: auto;
+}
+
+
+
+
+
+
 .social-icons li {
     display: inline-block;
     margin-bottom: 5px;
@@ -68,4 +91,19 @@ body {
 
 .social-icons li:nth-child(6) span {
     background-position: -96px -48px;
+}
+
+
+.btn-black {
+    background-color: #000;
+    color: #FFF;
+}
+
+    .btn-black:hover {
+        color: #FFF;
+    }
+
+
+.genreright {
+    transform: translateX(1000000000px)
 }
